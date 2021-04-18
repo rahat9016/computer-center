@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
-import './Order.css'
+// import './Order.css'
 
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import Sidebar from '../Sidebar/Sidebar';
@@ -80,7 +80,7 @@ const ServiceDetails = () => {
                    
                 </form>
 
-                <div>
+                <div className="">
                     <ProcessPayment handlePayment={handlePaymentSuccess} service={service}></ProcessPayment>
                 </div>
             </div>

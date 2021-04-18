@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import OrderItem from '../OrderItem/OrderItem';
 import Sidebar from '../Sidebar/Sidebar';
-
+import './orderlist.css'
 const OrderList = () => {
     const [orderData,setOrderData] = useState([])
     useEffect(()=>{
@@ -16,11 +16,14 @@ const OrderList = () => {
             <div>
                 <Sidebar className="sidebar-container"></Sidebar>
             </div>
+            
             <div className="main-container">
-                <h1>Order list</h1>
-                {
-                    orderData.map(order => <OrderItem order={order}></OrderItem>)
-                }
+            <h1>Order list</h1>
+                <div>
+                    {
+                        orderData.map(order => <OrderItem order={order}></OrderItem>)
+                    }
+                </div>
             </div>
         </div>
     );

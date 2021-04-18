@@ -41,7 +41,7 @@ const Login = () => {
 
     return (
         <div className="login-container">
-        <div className=" align-items-center" >
+        <div className="align-items-center" >
             <div className="text-center my-5">
                 <img src={logo}alt=""/>
             </div>
