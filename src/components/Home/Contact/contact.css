@@ -1,0 +1,23 @@
+.formContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:50px;
+    margin-top: 50px;
+}
+.inputFiled{
+    background-color: lightgray;
+}
+.contact-container{
+    width: 80%;
+    margin:0 auto
+}
+@media only screen and (max-width: 600px) {
+    .formContainer{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+    }
+    .contact-container{
+        width: 100%;
+        padding: 20px;
+    }
+}

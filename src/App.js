@@ -1,24 +1,63 @@
-import logo from './logo.svg';
+import React, { createContext, useState } from "react";
+import { BrowserRouter as Router, Switch, Route,
+} from "react-router-dom";
+
 import './App.css';
+import AddServices from "./components/Admin/AddServices/AddServices";
+import Admin from "./components/Admin/Admin/Admin";
+import Checkout from "./components/Admin/Checkout/Checkout";
+import Order from "./components/Admin/Order/Order";
+import Home from "./components/Home/Home/Home";
+import Login from "./components/Login/Login/Login";
+import OrderList from "./components/Admin/OrderList/OrderList";
+import Review from "./components/Admin/Review/Review";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import MakeAdmin from "./components/Admin/MakeAdmin/MakeAdmin";
+
+
+
+export const UserContext = createContext()
 
 function App() {
+  const [loggedInUser,serLoggedInUser] = useState({})
+  console.log(loggedInUser)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[loggedInUser,serLoggedInUser]}>
+        <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route  path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/admin">
+            <Admin></Admin>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/addService">
+            <AddServices></AddServices>
+          </Route>
+          <Route path="/order">
+            <Order></Order>
+          </Route>
+          <Route path="/orderList">
+            <OrderList></OrderList>
+          </Route>
+          <Route path="/review">
+            <Review></Review>
+          </Route>
+          <Route path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </Route>
+          <Route path="/checkout/:id">
+            <Checkout></Checkout>
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

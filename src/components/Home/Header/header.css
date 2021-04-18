@@ -1,0 +1,12 @@
+.header-container{
+    background-image: url(../../../images/headerBg.png);
+    background-repeat:no-repeat ;
+    height: 750px;
+    background-size: cover;
+    color: #fff;
+}
+@media only screen and (max-width: 600px) {
+    .header-container{
+        height: 800px;
+    }
+}

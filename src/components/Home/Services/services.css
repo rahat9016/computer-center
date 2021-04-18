@@ -1,0 +1,20 @@
+.service-card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:50px;
+    
+}
+.service-card img{
+    height: 300px;
+}
+@media only screen and (max-width: 600px) {
+    .service-card{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap:30px;
+        
+    }
+    .service-card img{
+        height: 250px;
+    }
+}

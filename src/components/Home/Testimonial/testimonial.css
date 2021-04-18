@@ -1,0 +1,20 @@
+.testimonial-container{
+    width: 80%;
+    margin: 0 auto;
+}
+.testimonialItem-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .testimonial-container{
+        width: 100%;
+        padding: 20px;
+    }
+    .testimonialItem-container{
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 30px;
+    }
+}
