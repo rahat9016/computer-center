@@ -16,7 +16,7 @@ const AddServices = () => {
         imgUrl: uploadImg
       }
       console.log(eventData)
-      const url = `http://localhost:5000/addServices`
+      const url = `https://rahatcomputercenter.herokuapp.com/addServices`
       fetch(url, {
           method:'POST',
           headers:{
@@ -48,7 +48,7 @@ const AddServices = () => {
       <div className="main-container bg-light-white">
         <div className="py-2 px-3 d-flex align-items-center bg-white justify-content-between mb-2">
             <h1 className="font-color-ping fw-bolder">Add Service</h1>
-            <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}/>
+            <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}className="loggedInUserPhoto"/>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
             <input className="main-container-input form-control mb-4" name="name" {...register("name", { required: true })}  placeholder="Enter Title"/>

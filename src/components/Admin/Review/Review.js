@@ -16,7 +16,7 @@ const Review = () => {
             company:data.company,
             review:data.review,
         }
-    const url = 'http://localhost:5000/clientReview'
+    const url = 'https://rahatcomputercenter.herokuapp.com/clientReview'
     fetch(url,{
         method:'POST',
         headers:{
@@ -31,9 +31,12 @@ const Review = () => {
             <div className="sidebar-container">
                 <Sidebar></Sidebar>
             </div>
-<div className="main-container bg-light-white px-5">
-    <h1 className="font-color-ping">Review</h1>
-    <form onSubmit={handleSubmit(onSubmit)}>
+<div className="main-container bg-light-white ">
+    <div className="py-2 px-3 d-flex align-items-center bg-white justify-content-between mb-2">
+                    <h1 className="font-color-ping fw-bolder">Review</h1>
+                    <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}className="loggedInUserPhoto"/>
+                </div>
+    <form onSubmit={handleSubmit(onSubmit)} className="px-5">
       <input className="main-container-input form-control mb-3" name="name"{...register("name",{ required: true })} defaultValue={loggedInUser.displayName} placeholder="Your Name" />
       {errors.name && <span>This field is required</span>}
 

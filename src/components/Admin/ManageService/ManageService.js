@@ -4,19 +4,24 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const ManageService = () => {
     const [manageService,setManageService] = useState([])
+    const [service,setService] = useState("")
     const [loggedInUser,setLoggedInUser] = useContext(UserContext)
     useEffect(()=>{
-        fetch(`http://localhost:5000/getOrder`)
+        fetch(`https://rahatcomputercenter.herokuapp.com/getOrder`)
         .then(res => res.json())
         .then(data => setManageService(data))
     },[])
     console.log(manageService)
     const deleteProduct = (id)=>{
-        fetch(`http://localhost:5000/delete/${id}`,{
+        fetch(`https://rahatcomputercenter.herokuapp.com/delete/${id}`,{
             method:'DELETE'            
         })
         .then(res => res.json())
         .then(result => console.log('Delete Successfully Done!'))
+    }
+    const changeData = data =>{
+        const services = data.target.value
+        setService(services)
     }
     
     return (
@@ -27,7 +32,6 @@ const ManageService = () => {
             <div className="main-container bg-light-white">
             <div className="py-2 px-3 d-flex align-items-center bg-white justify-content-between mb-2">
                 <h1 className="font-color-ping fw-bolder">Manage Service</h1>
-                
                 <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}className="loggedInUserPhoto"/>
             </div>
             <table className="table table-borderless">
@@ -52,6 +56,14 @@ const ManageService = () => {
                         <td>{manage.email}</td>
                         <td>{manage.title}</td>
                         <td></td>
+                        <td>
+                            <select onChange={changeData}>
+                                <option>pending</option>
+                                <option>go on</option>
+                                <option>done</option>
+                            </select>
+                            {service}
+                        </td>
                         
                         <td className="text-center"><i onClick={()=>deleteProduct(manage._id)} class="fas fa-trash-alt text-danger cursor-pointer"></i></td>
                     </tr>

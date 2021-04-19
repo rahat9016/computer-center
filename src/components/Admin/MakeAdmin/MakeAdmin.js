@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/addAdmin`
+        const url = `https://rahatcomputercenter.herokuapp.com/addAdmin`
         fetch(url,{
             method:'POST',
             headers:{
@@ -29,7 +29,7 @@ const MakeAdmin = () => {
                 <div className="bg-light-white" style={{height:"100vh"}}>
                 <div className="py-2 px-3 d-flex align-items-center bg-white justify-content-between mb-2">
                     <h1 className="font-color-ping fw-bolder">Make Admin</h1>
-                    <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}/>
+                    <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}className="loggedInUserPhoto"/>
                 </div>
                     <div className="bg-primary shadow w-50 ms-3 p-5"style={{top:'20px',borderRadius:'10px'}}>
                         <form onSubmit={handleSubmit(onSubmit)} className="d-flex align-items-center">

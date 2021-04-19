@@ -16,7 +16,7 @@ const ServiceDetails = () => {
     console.log(service)
     
     React.useEffect(() => {
-        fetch(`http://localhost:5000/servicesData/${id}`)
+        fetch(`https://rahatcomputercenter.herokuapp.com/servicesData/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setService(data)
@@ -47,7 +47,7 @@ const ServiceDetails = () => {
             orderTime: new Date().toDateString('dd/mm/yyyy')
         }
         console.log("newInfo ", newInformation);
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://rahatcomputercenter.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newInformation)
@@ -68,7 +68,7 @@ const ServiceDetails = () => {
             <div className="main-container bg-light-white">
                 <div className="py-2 px-3 d-flex align-items-center bg-white justify-content-between mb-2">
                     <h1 className="font-color-ping fw-bolder">Your Order</h1>
-                    <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}/>
+                    <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}className="loggedInUserPhoto"/>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className="order-Form">
                     <div className="form-group main-container-input mb-3">
