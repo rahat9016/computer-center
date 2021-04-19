@@ -4,25 +4,28 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const ManageService = () => {
     const [manageService,setManageService] = useState([])
-    const [service,setService] = useState("")
-    const [loggedInUser,setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser] = useContext(UserContext)
     useEffect(()=>{
-        fetch(`https://rahatcomputercenter.herokuapp.com/getOrder`)
+        fetch(`http://localhost:5000/servicesData`)
         .then(res => res.json())
         .then(data => setManageService(data))
     },[])
-    console.log(manageService)
+    console.log(loggedInUser)
     const deleteProduct = (id)=>{
-        fetch(`https://rahatcomputercenter.herokuapp.com/delete/${id}`,{
+        fetch(`http://localhost:5000/delete/${id}`,{
             method:'DELETE'            
         })
         .then(res => res.json())
-        .then(result => console.log('Delete Successfully Done!'))
+        .then(result => {
+            if(result){
+                alert('Your Item Deleted!')
+            }
+            
+            console.log('Delete Successfully Done!')
+        })
+        window.location.reload(false); 
     }
-    const changeData = data =>{
-        const services = data.target.value
-        setService(services)
-    }
+ 
     
     return (
         <div className="wrap-container">
@@ -41,8 +44,6 @@ const ManageService = () => {
                 <th className="text-secondary" scope="col">Name</th>
                 <th className="text-secondary" scope="col">E-email</th>
                 <th className="text-secondary" scope="col">Service</th>
-                <th className="text-secondary text-center" scope="col">Pay With</th>
-                <th className="text-secondary text-center" scope="col">Status</th>
                 <th className="text-secondary text-center" scope="col">Delete</th>
                 </tr>
             </thead>
@@ -52,18 +53,9 @@ const ManageService = () => {
                         
                     <tr>
                         <td>{index + 1}</td>
-                        <td>{manage.displayName}</td>
-                        <td>{manage.email}</td>
-                        <td>{manage.title}</td>
-                        <td></td>
-                        <td>
-                            <select onChange={changeData}>
-                                <option>pending</option>
-                                <option>go on</option>
-                                <option>done</option>
-                            </select>
-                            {service}
-                        </td>
+                        <td>{loggedInUser.displayName}</td>
+                        <td>{loggedInUser.email}</td>
+                        <td>{manage.name}</td>
                         
                         <td className="text-center"><i onClick={()=>deleteProduct(manage._id)} class="fas fa-trash-alt text-danger cursor-pointer"></i></td>
                     </tr>

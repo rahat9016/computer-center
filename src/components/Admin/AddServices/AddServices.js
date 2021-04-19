@@ -8,7 +8,7 @@ const AddServices = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [uploadImg,setUploadImg] = useState(null)
     const [loggedInUser] = useContext(UserContext)
-    const onSubmit = data => {
+    const onSubmit = (data,e) => {
       const eventData = {
         name: data.name,
         price: data.price,
@@ -16,7 +16,7 @@ const AddServices = () => {
         imgUrl: uploadImg
       }
       console.log(eventData)
-      const url = `https://rahatcomputercenter.herokuapp.com/addServices`
+      const url = `http://localhost:5000/addServices`
       fetch(url, {
           method:'POST',
           headers:{
@@ -25,6 +25,7 @@ const AddServices = () => {
           body: JSON.stringify(eventData)
       })
       .then(res => console.log(""))
+      e.target.reset()
     };
    
 

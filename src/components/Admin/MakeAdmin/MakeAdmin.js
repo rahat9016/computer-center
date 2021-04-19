@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `https://rahatcomputercenter.herokuapp.com/addAdmin`
+        const url = `http://localhost:5000/addAdmin`
         fetch(url,{
             method:'POST',
             headers:{

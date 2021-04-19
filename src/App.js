@@ -14,6 +14,7 @@ import Review from "./components/Admin/Review/Review";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import MakeAdmin from "./components/Admin/MakeAdmin/MakeAdmin";
 import ManageService from "./components/Admin/ManageService/ManageService";
+import NotFound from "./components/NotFound/NotFound";
 
 
 
@@ -59,6 +60,9 @@ function App() {
           </Route>
           <Route path="/checkout/:id">
             <Checkout></Checkout>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>

@@ -8,7 +8,7 @@ const Review = () => {
     const [loggedInUser,setLoggedInUser] = useContext(UserContext)
     console.log(loggedInUser)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data,e) => {
         const reviewData = {
             photo:loggedInUser.photoURL,
             email: loggedInUser.email,
@@ -16,7 +16,7 @@ const Review = () => {
             company:data.company,
             review:data.review,
         }
-    const url = 'https://rahatcomputercenter.herokuapp.com/clientReview'
+    const url = 'http://localhost:5000/clientReview'
     fetch(url,{
         method:'POST',
         headers:{
@@ -25,6 +25,7 @@ const Review = () => {
         body:JSON.stringify(reviewData)
     })
     .then(res => console.log(res))
+    e.target.reset()
     };
     return (
         <div className="wrap-container">

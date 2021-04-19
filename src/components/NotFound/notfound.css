@@ -1,0 +1,7 @@
+.notFoundContainer{
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+}

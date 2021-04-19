@@ -16,7 +16,7 @@ const ServiceDetails = () => {
     console.log(service)
     
     React.useEffect(() => {
-        fetch(`https://rahatcomputercenter.herokuapp.com/servicesData/${id}`)
+        fetch(`http://localhost:5000/servicesData/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setService(data)
@@ -30,13 +30,13 @@ const ServiceDetails = () => {
         
     }
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data) => {
         const newInformation = { 
             ...service, ...loggedInUser 
         }
     };
 
-    const handlePaymentSuccess = paymentId => {
+    const handlePaymentSuccess = (paymentId) => {
         const newInformation = {
             ...loggedInUser,
             title: service.name,
@@ -47,7 +47,7 @@ const ServiceDetails = () => {
             orderTime: new Date().toDateString('dd/mm/yyyy')
         }
         console.log("newInfo ", newInformation);
-        fetch('https://rahatcomputercenter.herokuapp.com/addOrder', {
+        fetch('http://localhost:5000/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newInformation)
