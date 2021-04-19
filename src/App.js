@@ -34,33 +34,33 @@ function App() {
           <Route  path="/home">
             <Home></Home>
           </Route>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
             <Admin></Admin>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/addService">
+          <PrivateRoute path="/addService">
             <AddServices></AddServices>
-          </Route>
-          <Route path="/order">
+          </PrivateRoute>
+          <PrivateRoute path="/order">
             <Order></Order>
-          </Route>
-          <Route path="/orderList">
+          </PrivateRoute>
+          <PrivateRoute path="/orderList">
             <OrderList></OrderList>
-          </Route>
-          <Route path="/review">
+          </PrivateRoute>
+          <PrivateRoute path="/review">
             <Review></Review>
-          </Route>
-          <Route path="/makeAdmin">
+          </PrivateRoute>
+          <PrivateRoute path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
-          </Route>
-          <Route path="/manageService">
+          </PrivateRoute>
+          <PrivateRoute path="/manageService">
             <ManageService></ManageService>
-          </Route>
-          <Route path="/checkout/:id">
+          </PrivateRoute>
+          <PrivateRoute path="/checkout/:id">
             <Checkout></Checkout>
-          </Route>
+          </PrivateRoute>
           <Route path="*">
             <NotFound></NotFound>
           </Route>
