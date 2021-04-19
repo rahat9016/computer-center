@@ -59,8 +59,8 @@ const Login = () => {
             </div>
             <div className="d-flex justify-content-center cursor-pointer"onClick={handleGoogleSignIn}>
                 <div className="from-group mt-5 d-flex align-items-center bg-danger w-50 rounded text-white justify-content-center py-2">
-                    <i class="fab fa-google me-3 fs-2"></i>  
-                    <h6 className="text-white mb-0 ms-1 ">Google Sign in</h6>
+                    <i class="fab fa-google me-3 "></i>  
+                    <h5 className="text-white mb-0 ms-1 ">Google Sign in</h5>
                 </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
-// import './Order.css'
+import './Order.css'
 
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import Sidebar from '../Sidebar/Sidebar';
@@ -63,11 +63,14 @@ const ServiceDetails = () => {
     return (
         <section className="wrap-container">
             <div className="sidebar-container">
-                <Sidebar />
+                <Sidebar></Sidebar>
             </div>
-            <div className="main-container bg-light-white px-5">
-                <h1 className="font-color-ping">Your Order</h1>
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="main-container bg-light-white">
+                <div className="py-2 px-3 d-flex align-items-center bg-white justify-content-between mb-2">
+                    <h1 className="font-color-ping fw-bolder">Your Order</h1>
+                    <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}/>
+                </div>
+                <form onSubmit={handleSubmit(onSubmit)} className="order-Form">
                     <div className="form-group main-container-input mb-3">
                         <input class="form-control" onBlur={handleBlur} type="text" className="form-control" value={loggedInUser.displayName} name="displayName" placeholder="Enter Your Name"/>
                     </div>
@@ -79,8 +82,7 @@ const ServiceDetails = () => {
                     </div>
                    
                 </form>
-
-                <div className="">
+                <div className="order-Form">
                     <ProcessPayment handlePayment={handlePaymentSuccess} service={service}></ProcessPayment>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import AboutImg from '../../../images/about.jpg'
 import './aboutus.css'
 const AboutUs = () => {
     return (
-        <section style={{backgroundColor:'#FFF8F5', padding:"40px 0"}}>
+        <section style={{backgroundColor:'#FFF8F5', padding:"40px 0"}} >
             <div className="aboutus-container">
                 <div className="text-center">
                     <img className="w-100" style={{borderRadius:'20px'}} src={AboutImg} alt=""/>

@@ -4,14 +4,22 @@
     grid-gap:50px;
     
 }
+.service-container{
+    margin: 0 auto;
+    width: 80%;
+}
 .service-card img{
     height: 300px;
 }
 @media only screen and (max-width: 600px) {
+    .service-container{
+        width: 100%;
+    }
     .service-card{
         display: grid;
         grid-template-columns: repeat(1,1fr);
         grid-gap:30px;
+        padding:10px ;
         
     }
     .service-card img{

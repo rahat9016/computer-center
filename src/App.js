@@ -13,6 +13,8 @@ import OrderList from "./components/Admin/OrderList/OrderList";
 import Review from "./components/Admin/Review/Review";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import MakeAdmin from "./components/Admin/MakeAdmin/MakeAdmin";
+import ManageService from "./components/Admin/ManageService/ManageService";
+
 
 
 
@@ -51,6 +53,9 @@ function App() {
           </Route>
           <Route path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
+          </Route>
+          <Route path="/manageService">
+            <ManageService></ManageService>
           </Route>
           <Route path="/checkout/:id">
             <Checkout></Checkout>

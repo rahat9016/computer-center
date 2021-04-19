@@ -50,7 +50,6 @@ const SimpleCardForm = ({ handlePayment,service }) => {
                 <div className="d-flex align-items-center justify-content-between main-container-input">
                     <h5>Your Service Charge Will Be <span className="font-color-ping">${service.price}</span></h5>
                     <button className="btn brand-btn px-5" type="submit" disabled={!stripe}>Pay</button>
-                    
                 </div>
             </form>
             

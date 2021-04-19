@@ -13,7 +13,7 @@ const Sidebar = () => {
             body: JSON.stringify({email: loggedInUser.email})
         })
             .then(res => res.json())
-        .then(res=>setIsAdmin(res))
+        .then(res=> setIsAdmin(res))
     }, [])
     console.log(isAdmin)
     return (
@@ -25,7 +25,7 @@ const Sidebar = () => {
             <ul className="list-unstyled ms-2">
                 <li className="my-3">
                     <Link to="/order" className="text-white">
-                    <i class="fas fa-hdd me-3" ></i> <span>Book</span>
+                    <i class="fas fa-hdd me-3" ></i> <span>Order</span>
                     </Link>
                 </li>
                 {isAdmin && <div>
@@ -52,13 +52,13 @@ const Sidebar = () => {
                     <i class="fas fa-shopping-cart me-3 "></i> <span>Order List</span>
                     </Link>
                 </li>
-                
+                </div>}
                 <li className="my-3">
                     <Link to="/review" className="text-white" >
                     <i class="far fa-comment-alt me-3"></i> <span>Review</span>
                     </Link>
                 </li>
-                </div>}
+                
                 
             </ul>
            

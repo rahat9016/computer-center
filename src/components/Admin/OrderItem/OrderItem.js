@@ -1,12 +1,15 @@
 import React from 'react';
 import './OrderItem.css'
 const OrderItem = ({order}) => {
-    console.log(order)
     return (
-        <div className="">
-            <h3>{order.displayName}</h3>
-            <img src={order.img} className="w-100"/>
-            <p>{order.price}</p>
+        <div className="bg-white shadow p-4 rounded-3">
+            <div className="d-flex justify-content-between mb-3">
+                <img src={order.img} className="orderImg"/>
+                <button className="orderBtn">Pending</button>
+            </div>
+            <h3 className="fw-bold">{order.title}</h3>
+            <p>{order.description}</p>
+            <h4 className="fw-bolder font-color-ping">${order.price}</h4>
         </div>
     );
 };

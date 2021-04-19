@@ -5,6 +5,7 @@ import { UserContext } from '../../../App';
 import Sidebar from '../Sidebar/Sidebar'
 const MakeAdmin = () => {
     const [loggedInUser,setLoggedInUser] = useContext(UserContext)
+    console.log(loggedInUser)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
@@ -25,11 +26,12 @@ const MakeAdmin = () => {
                 <Sidebar></Sidebar>
             </div>
             <div className="main-container">
-                <div className=" px-3 ">
-                    <h1 className="font-color-ping">Make Admin</h1>
+                <div className="bg-light-white" style={{height:"100vh"}}>
+                <div className="py-2 px-3 d-flex align-items-center bg-white justify-content-between mb-2">
+                    <h1 className="font-color-ping fw-bolder">Make Admin</h1>
+                    <img src={loggedInUser.photoURL}style={{borderRadius:'50%',width:'50px',}}/>
                 </div>
-                <div className="bg-light-white position-relative" style={{height:"100vh"}}>
-                    <div className="position-absolute bg-primary shadow w-50 ms-3 p-5"style={{top:'20px',borderRadius:'10px'}}>
+                    <div className="bg-primary shadow w-50 ms-3 p-5"style={{top:'20px',borderRadius:'10px'}}>
                         <form onSubmit={handleSubmit(onSubmit)} className="d-flex align-items-center">
                             <input className="w-75 form-control" name="email"{...register("email",{ required: true })} placeholder="Add Admin" />
                             {errors.email && <span>E-mail field is required</span>}

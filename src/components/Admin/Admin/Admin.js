@@ -3,8 +3,8 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const Admin = () => {
     return (
-        <div className="d-flex">
-            <div>
+        <div className="wrap-container">
+            <div className="sidebar-container">
                 <Sidebar></Sidebar>
             </div>
             
