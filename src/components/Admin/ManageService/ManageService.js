@@ -6,13 +6,13 @@ const ManageService = () => {
     const [manageService,setManageService] = useState([])
     const [loggedInUser] = useContext(UserContext)
     useEffect(()=>{
-        fetch(`http://localhost:5000/servicesData`)
+        fetch(`https://rahatcomputercenter.herokuapp.com/servicesData`)
         .then(res => res.json())
         .then(data => setManageService(data))
     },[])
     console.log(loggedInUser)
     const deleteProduct = (id)=>{
-        fetch(`http://localhost:5000/delete/${id}`,{
+        fetch(`https://rahatcomputercenter.herokuapp.com/delete/${id}`,{
             method:'DELETE'            
         })
         .then(res => res.json())

@@ -16,7 +16,7 @@ const AddServices = () => {
         imgUrl: uploadImg
       }
       console.log(eventData)
-      const url = `http://localhost:5000/addServices`
+      const url = `https://rahatcomputercenter.herokuapp.com/addServices`
       fetch(url, {
           method:'POST',
           headers:{

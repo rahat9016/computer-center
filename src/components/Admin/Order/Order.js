@@ -16,7 +16,7 @@ const ServiceDetails = () => {
     console.log(service)
     
     React.useEffect(() => {
-        fetch(`http://localhost:5000/servicesData/${id}`)
+        fetch(`https://rahatcomputercenter.herokuapp.com/servicesData/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setService(data)
@@ -47,7 +47,7 @@ const ServiceDetails = () => {
             orderTime: new Date().toDateString('dd/mm/yyyy')
         }
         console.log("newInfo ", newInformation);
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://rahatcomputercenter.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newInformation)
