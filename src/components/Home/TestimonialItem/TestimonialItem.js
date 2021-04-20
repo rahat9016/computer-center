@@ -1,6 +1,6 @@
 import React from 'react';
 const TestimonialItem = ({testimonial}) => {
-   
+ 
     return (
         <div className="">
             <div className="d-flex align-items-center">

@@ -58,6 +58,12 @@ const Sidebar = () => {
                     <i class="far fa-comment-alt me-3"></i> <span>Review</span>
                     </Link>
                 </li>
+                <li className="my-3">
+                    <Link to="/booking" className="text-white" >
+                    <i class="far fa-comment-alt me-3"></i> <span>Booking List</span>
+                    </Link>
+                </li>
+
                 
                 
             </ul>

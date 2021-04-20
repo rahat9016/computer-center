@@ -15,7 +15,7 @@ import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import MakeAdmin from "./components/Admin/MakeAdmin/MakeAdmin";
 import ManageService from "./components/Admin/ManageService/ManageService";
 import NotFound from "./components/NotFound/NotFound";
-
+import BookingList from "./components/Admin/BookingList/BookingList";
 
 
 
@@ -51,6 +51,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/review">
             <Review></Review>
+          </PrivateRoute>
+          <PrivateRoute path="/booking">
+            <BookingList></BookingList>
           </PrivateRoute>
           <PrivateRoute path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
